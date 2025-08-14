@@ -14,17 +14,29 @@ LocalStack é uma ferramenta que simula serviços da AWS localmente, permitindo 
 Crie o arquivo `docker-compose.yml`:
 
 ```yaml
-version: '3.8'
+version: "3.8"
+
 services:
   localstack:
-    image: localstack/localstack:latest
+    image: localstack/localstack:3.6
     container_name: localstack
     ports:
-      - "4566:4566" # Porta unificada para todos os serviços
+      - "4566:4566"  # Endpoint unificado para todos os serviços
+      - "4571:4571"
     environment:
-      - SERVICES=s3,sqs,lambda,cloudwatch
+      - SERVICES=s3,sqs,lambda,cloudwatch,logs
       - DEBUG=1
-      - DATA_DIR=/var/lib/localstack/data
+      - LAMBDA_EXECUTOR=docker-reuse
+      - LAMBDA_REMOVE_CONTAINERS=true
+      - DATA_DIR=/tmp/localstack/data
+      - DEFAULT_REGION=us-east-1
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+      - AWS_DEFAULT_REGION=us-east-1
+      - LOCALSTACK_UI=1
     volumes:
-      - "./localstack-data:/var/lib/localstack"
-      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "/var/run/docker.sock:/var/run/docker.sock" # Necessário para execução de Lambdas
+
+networks:
+  default:
+    name: localstack-net
