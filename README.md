@@ -40,8 +40,9 @@ services:
 networks:
   default:
     name: localstack-net
-
-
 ```
+---
+
 ## 3. Execute
+```
   docker compose up -d
