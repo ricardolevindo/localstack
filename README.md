@@ -24,7 +24,7 @@ services:
       - "4566:4566"  # Endpoint unificado para todos os serviços
       - "4571:4571"
     environment:
-      - SERVICES=s3,sqs,lambda,cloudwatch,logs
+      - SERVICES=s3,sqs,lambda,cloudwatch,logs,dynamodb,eventbridge
       - DEBUG=1
       - LAMBDA_EXECUTOR=docker-reuse
       - LAMBDA_REMOVE_CONTAINERS=true
