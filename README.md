@@ -187,7 +187,7 @@ Ferramentas como awslocal (pip install awscli-local)
 
 
 ```
-# Exemplo NodeJS + TypeScript com LocalStack simulando:
+# Guia Prático de Desenvolvimento e Testes Locais com AWS e LocalStack
 
   ### 1. API de entrada (Express) → recebe POST com dados do cliente → adiciona UUID curto → envia para SQS.
   ### 2. Lambda → disparada por evento da SQS → acrescenta dataHora → POSTa para outra API consumidora.
