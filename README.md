@@ -240,3 +240,5 @@ localstack-node-ts/
 #### 8. Criando a Lambda no LocalStack
 
 
+```bash
+aws s3 ls
