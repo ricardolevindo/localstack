@@ -193,6 +193,7 @@ Ferramentas como awslocal (pip install awscli-local)
   ### 2. Lambda → disparada por evento da SQS → acrescenta dataHora → POSTa para outra API consumidora.
   ### 2. API consumidora → recebe POST → grava no DynamoDB.
 
+## Estrutura de Pastas
 ```
 localstack-node-ts/
 ├── docker-compose.yml
@@ -206,13 +207,14 @@ localstack-node-ts/
 └── scripts/
     ├── setup-resources.sh
 ```
-1. docker-compose.yml
-2. package.json
-3. tsconfig.json
-4. scripts/setup-resources.sh
-5. src/api-produtora.ts — API que envia para SQS
-6. src/lambda-consumer.ts — Lambda que lê da SQS e envia para API consumidora
-7. src/api-consumidora.ts — API que grava no DynamoDB
-8. Criando a Lambda no LocalStack
+
+### 1. docker-compose.yml
+### 2. package.json
+### 3. tsconfig.json
+### 4. scripts/setup-resources.sh
+### 5. src/api-produtora.ts — API que envia para SQS
+### 6. src/lambda-consumer.ts — Lambda que lê da SQS e envia para API consumidora
+### 7. src/api-consumidora.ts — API que grava no DynamoDB
+### 8. Criando a Lambda no LocalStack
 
 
