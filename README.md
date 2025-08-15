@@ -210,7 +210,7 @@ localstack-node-ts/
 
 #### 1. docker-compose.yml
 #### 2. package.json
-```json
+``` json
 {
   "name": "localstack-node-ts",
   "version": "1.0.0",
@@ -230,6 +230,7 @@ localstack-node-ts/
     "typescript": "^5.5.4"
   }
 }
+```
 
 #### 3. tsconfig.json
 #### 4. scripts/setup-resources.sh
