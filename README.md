@@ -48,8 +48,18 @@ networks:
   docker compose up -d
 
 4. Instalando AWS CLI
-Linux
-sudo apt install awscli -y
+  Linux
+    sudo apt install awscli -y
+
+    (método recomendado pela AWS)
+      curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      unzip awscliv2.zip
+      sudo ./aws/install
+
+      📌 Para confirmar a instalação:
+      aws --version
+      Saída esperada:
+        aws-cli/2.x.x Python/3.x.x Linux/x86_64
 
 macOS (Homebrew)
 brew install awscli
