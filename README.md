@@ -210,6 +210,27 @@ localstack-node-ts/
 
 #### 1. docker-compose.yml
 #### 2. package.json
+json
+{
+  "name": "localstack-node-ts",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev:api": "ts-node src/api-produtora.ts",
+    "dev:consumer-api": "ts-node src/api-consumidora.ts"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1488.0",
+    "express": "^4.19.2",
+    "uuid": "^9.0.1",
+    "axios": "^1.6.8"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "^5.5.4"
+  }
+}
+
 #### 3. tsconfig.json
 #### 4. scripts/setup-resources.sh
 #### 5. src/api-produtora.ts — API que envia para SQS
